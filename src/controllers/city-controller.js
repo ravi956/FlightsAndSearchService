@@ -2,7 +2,7 @@ const { CityService } = require('../services/index');
 
 const cityService = new CityService();
 
-// POST -> /city
+// POST -> /cities
 const create = async (req, res) => {
   try {
     const city = await cityService.createCity(req.body);
@@ -23,7 +23,7 @@ const create = async (req, res) => {
   }
 };
 
-// DELETE -> /city/:id
+// DELETE -> /cities/:id
 const destroy = async (req, res) => {
   try {
     const response = await cityService.deleteCity(req.params.id);
@@ -44,7 +44,7 @@ const destroy = async (req, res) => {
   }
 };
 
-// GET -> /city/:id
+// GET -> /cities/:id
 const get = async (req, res) => {
   try {
     const response = await cityService.getCity(req.params.id);
@@ -65,7 +65,7 @@ const get = async (req, res) => {
   }
 };
 
-// Patch -> /city/:id
+// Patch -> /cities/:id
 const update = async (req, res) => {
   try {
     const response = await cityService.updateCity(req.params.id, req.body);
@@ -86,7 +86,7 @@ const update = async (req, res) => {
   }
 };
 
-// GET -> /city
+// GET -> /cities
 const getAll = async (req, res) => {
   try {
     const cities = await cityService.getAllCities(req.query);
